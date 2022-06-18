@@ -1,7 +1,7 @@
 ---
 title: "Quarto and gt tables to HTML"
 author: "Jeremy Allen"
-date: "5/22/2021"
+date: "`r as.Date(Sys.time())`"
 format:
   html:
     toc: true
