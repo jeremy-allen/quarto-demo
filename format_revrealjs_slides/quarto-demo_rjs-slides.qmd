@@ -1,0 +1,129 @@
+---
+title: "Quarto and gt tables to revealJS slides"
+author: "Jeremy Allen"
+date: "`r as.Date(Sys.time())`"
+format:
+  revealjs:
+    slide-number: c/t
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[https://github.com/jeremy-allen/quarto-demo](https://github.com/jeremy-allen/quarto-demo)"
+    code-copy: true
+    center-title-slide: false
+    include-in-header: heading-meta.html
+    code-link: true
+    code-overflow: wrap
+    highlight-style: a11y
+    height: 1080
+    width: 1920
+execute: 
+  eval: true
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+---
+
+# Penguin Anatomy Over Time and Islands: a demo of Quarto, `gt`, and `gtExtras`
+
+Quarto®
+: Quarto is an open-source scientific and technical publishing system built on Pandoc.  
+
+gt
+: With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
+
+gtExtras
+: The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  
+
+---
+
+## Load packages and prep data
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: true
+
+library(tidyverse)
+library(palmerpenguins)
+library(gt)
+library(gtExtras)
+
+# make a table of our data
+# but let's summarize by year, so first make a year column
+dat <- penguins %>%
+  dplyr::arrange(year) %>% 
+  mutate(year = as.factor(year)) %>% 
+  group_by(species, island, year) %>% # order here will influence table output
+  summarise(across(bill_length_mm:body_mass_g, ~ mean(., na.rm = TRUE))) %>%
+  select(species, island, year, everything()) %>% 
+  dplyr::arrange(species, island, year) %>% 
+  ungroup() # experiment with and without
+```
+
+## Build the table with gt, include some gtExtras functions for colors
+
+gt's default is to produce an html table.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+# table using gt package
+pt <- dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  #gt(rowname_col = "species") %>%
+  #tab_stubhead(label = "species") %>%
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"),
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomy measures in mm",
+    columns = c(bill_length_mm:flipper_length_mm)
+  ) %>% 
+  fmt_number(
+    columns = bill_length_mm:body_mass_g,
+    decimals = 1
+  ) %>% 
+  tab_source_note(
+    source_note = "Source: Very cold nights."
+  ) %>%
+  tab_source_note(
+    # hitting return to start new lines so the string will stay inside the PDF
+    # but it will be a continuous string when it renders as the footnote
+    source_note = md("Reference: Horst AM, Hill AP, Gorman KB (2020). 
+    palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package
+    version 0.1.0. https://allisonhorst.github.io/palmerpenguins/")
+  ) %>% 
+  tab_footnote(
+    footnote = "Only found on a single island.",
+    locations = cells_row_groups(groups = c("Chinstrap", "Gentoo"))
+  ) %>%
+  # trim gives smaller range of colors
+  # so the green and purples are not as dark
+  gt_hulk_col_numeric(bill_length_mm, trim = TRUE) %>%  # gtExtras!
+  gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
+  gt_hulk_col_numeric(flipper_length_mm, trim = TRUE) %>%  # gtExtras!
+  cols_label( # new column labels!
+    bill_length_mm = md("**Bill Length**"), # wrapped in md() for markdown
+    bill_depth_mm = md("**Bill Depth**"),
+    flipper_length_mm = md("**Flipper Length**"),
+    body_mass_g = "Body Mass, g",
+    island = "Island",
+    year = "Year"
+  ) %>% 
+  tab_options(
+    row_group.font.weight = "800"
+  )
+
+pt
+```
+
+# Your turn! To get started:
+see [quarto.org](https://quarto.org/)  
+see [gt](https://gt.rstudio.com/index.html)  
+see [gtExtras](https://jthomasmock.github.io/gtExtras/) 
+
