@@ -11,13 +11,25 @@ format:
       source: true
     code-block-bg: true
     code-block-border-left: "#a679d2"
+    highlight-style: "a11y"
 editor_options: 
   chunk_output_type: console
 ---
 
 ---
 
-# Penguin Anatomy Over Time and Islands - a Quarto-gt demo
+# Penguin Anatomy Over Time and Islands: a demo of Quarto, `gt`, and `gtExtras`
+
+Quarto®
+: Quarto is an open-source scientific and technical publishing system built on Pandoc.  
+
+gt
+: With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
+
+gtExtras
+: The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  
+
+---
 
 ## Load packages and prep data
 
@@ -104,6 +116,8 @@ pt <- dat %>%
 pt
 ```
 
-# Your tuurn!
-see [quarto.org](https://quarto.org/) to get started  
+# Your turn! To get started:
+see [quarto.org](https://quarto.org/)  
+see [gt](https://gt.rstudio.com/index.html)  
+see [gtExtras](https://jthomasmock.github.io/gtExtras/) 
 
