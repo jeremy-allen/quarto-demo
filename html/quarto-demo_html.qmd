@@ -90,7 +90,7 @@ pt <- dat %>%
   gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
   gt_hulk_col_numeric(flipper_length_mm, trim = TRUE) %>%  # gtExtras!
   cols_label( # new column labels!
-    bill_length_mm = md("**Bill Length**"),
+    bill_length_mm = md("**Bill Length**"), # wrapped in md() for markdown
     bill_depth_mm = md("**Bill Depth**"),
     flipper_length_mm = md("**Flipper Length**"),
     body_mass_g = "Body Mass, g",
