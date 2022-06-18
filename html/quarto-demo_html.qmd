@@ -8,14 +8,14 @@ format:
     toc-location: right
     code-fold: true
     code-tools:
-      source: https://github.com/jeremy-allen/quarto-demo
+      source: true
     code-block-bg: true
-    code-block-border-left: #a679d2
+    code-block-border-left: "#a679d2"
 editor_options: 
   chunk_output_type: console
 ---
 
-see [quarto.org](https://quarto.org/) to get started  
+---
 
 # Penguin Anatomy Over Time and Islands - a Quarto-gt demo
 
@@ -104,5 +104,6 @@ pt <- dat %>%
 pt
 ```
 
-
+# Your tuurn!
+see [quarto.org](https://quarto.org/) to get started  
 
