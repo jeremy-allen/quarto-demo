@@ -1,0 +1,108 @@
+---
+title: "Quarto and gt tables to HTML"
+author: "Jeremy Allen"
+date: "5/22/2021"
+format:
+  html:
+    toc: true
+    toc-location: right
+    code-fold: true
+    code-tools:
+      source: https://github.com/jeremy-allen/quarto-demo
+    code-block-bg: true
+    code-block-border-left: #a679d2
+editor_options: 
+  chunk_output_type: console
+---
+
+see [quarto.org](https://quarto.org/) to get started  
+
+# Penguin Anatomy Over Time and Islands - a Quarto-gt demo
+
+## Load packages and prep data
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: true
+
+library(tidyverse)
+library(palmerpenguins)
+library(gt)
+library(gtExtras)
+
+# make a table of our data
+# but let's summarize by year, so first make a year column
+dat <- penguins %>%
+  dplyr::arrange(year) %>% 
+  mutate(year = as.factor(year)) %>% 
+  group_by(species, island, year) %>% # order here will influence table output
+  summarise(across(bill_length_mm:body_mass_g, ~ mean(., na.rm = TRUE))) %>%
+  select(species, island, year, everything()) %>% 
+  dplyr::arrange(species, island, year) %>% 
+  ungroup() # experiment with and without
+```
+
+## Build the table with gt, include some gtExtras functions for colors
+
+gt's default is to produce an html table.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+# table using gt package
+pt <- dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  #gt(rowname_col = "species") %>%
+  #tab_stubhead(label = "species") %>%
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"),
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomy measures in mm",
+    columns = c(bill_length_mm:flipper_length_mm)
+  ) %>% 
+  fmt_number(
+    columns = bill_length_mm:body_mass_g,
+    decimals = 1
+  ) %>% 
+  tab_source_note(
+    source_note = "Source: Very cold nights."
+  ) %>%
+  tab_source_note(
+    # hitting return to start new lines so the string will stay inside the PDF
+    # but it will be a continuous string when it renders as the footnote
+    source_note = md("Reference: Horst AM, Hill AP, Gorman KB (2020). 
+    palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package
+    version 0.1.0. https://allisonhorst.github.io/palmerpenguins/")
+  ) %>% 
+  tab_footnote(
+    footnote = "Only found on a single island.",
+    locations = cells_row_groups(groups = c("Chinstrap", "Gentoo"))
+  ) %>%
+  # trim gives smaller range of colors
+  # so the green and purples are not as dark
+  gt_hulk_col_numeric(bill_length_mm, trim = TRUE) %>%  # gtExtras!
+  gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
+  gt_hulk_col_numeric(flipper_length_mm, trim = TRUE) %>%  # gtExtras!
+  cols_label( # new column labels!
+    bill_length_mm = md("**Bill Length**"),
+    bill_depth_mm = md("**Bill Depth**"),
+    flipper_length_mm = md("**Flipper Length**"),
+    body_mass_g = "Body Mass, g",
+    island = "Island",
+    year = "Year"
+  ) %>% 
+  tab_options(
+    row_group.font.weight = "800"
+  )
+
+pt
+```
+
+
+
