@@ -1,7 +1,7 @@
 ---
 title: "Quarto and gt tables to PDF"
 author: "Jeremy Allen"
-date: "5/22/2021"
+date: "`r as.Date(Sys.time())`"
 format:
   pdf:
     toc: true
@@ -11,7 +11,20 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Penguin Anatomy Over Time and Islands - a Quarto-gt demo
+---
+
+# Penguin Anatomy Over Time and Islands: a demo of Quarto, `gt`, and `gtExtras`
+
+Quarto®
+: Quarto is an open-source scientific and technical publishing system built on Pandoc.  
+
+gt
+: With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
+
+gtExtras
+: The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.
+
+---
 
 ## Load packages and prep data
 
@@ -57,7 +70,7 @@ pt <- dat %>%
     subtitle = "By species, island, and year from 2007-2009"
   ) %>%
   tab_spanner( # tab spanner!
-    label = "Anatomy in mm",
+    label = "mean anatomy measures in mm",
     columns = c(bill_length_mm:flipper_length_mm)
   ) %>% 
   fmt_number(
@@ -84,7 +97,7 @@ pt <- dat %>%
   gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
   gt_hulk_col_numeric(flipper_length_mm, trim = TRUE) %>%  # gtExtras!
   cols_label( # new column labels!
-    bill_length_mm = md("**Bill Length**"),
+    bill_length_mm = md("**Bill Length**"), # wrapped in md() for markdown
     bill_depth_mm = md("**Bill Depth**"),
     flipper_length_mm = md("**Flipper Length**"),
     body_mass_g = "Body Mass, g",
@@ -94,6 +107,7 @@ pt <- dat %>%
   tab_options(
     row_group.font.weight = "800"
   )
+
 pt
 ```
 
@@ -127,3 +141,8 @@ And html elements show
 knitr::include_graphics("pt_as_image.png")
 
 ```
+
+# Your turn! To get started:
+see [quarto.org](https://quarto.org/)  
+see [gt](https://gt.rstudio.com/index.html)  
+see [gtExtras](https://jthomasmock.github.io/gtExtras/) 
