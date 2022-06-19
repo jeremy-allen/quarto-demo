@@ -1,0 +1,41 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+
+// colors
+$body-bg: #f0f1eb !default;
+$body-color: #000 !default;
+$link-color: #51483d !default;
+$selection-bg: #26351c;
+
+// headings
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-heading-color: #383d3d !default;
+
+/*-- scss:rules --*/
+
+.reveal body, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5,
+.reveal h6, .reveal p {
+  color: #555555;
+}
+
+.reveal code {
+  color: #467783;
+}
+
+.reveal a {
+  color: #1E1E1E;
+  line-height: 1em;
+  font-weight: 400;
+}
+
+.reveal a:hover {
+  font-weight: 600;
+}
+
+.column.cell {
+  padding: 3px;
+}

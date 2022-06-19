@@ -4,6 +4,7 @@ author: "Jeremy Allen"
 date: "`r as.Date(Sys.time())`"
 format:
   revealjs:
+    theme: ["theme/styles.scss"]
     slide-number: c/t
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[https://github.com/jeremy-allen/quarto-demo](https://github.com/jeremy-allen/quarto-demo)"
@@ -22,20 +23,22 @@ editor_options:
   chunk_output_type: console
 ---
 
----
+# Penguin Anatomy Over Time and Islands: a demo of `Quarto`, `gt`, and `gtExtras`
 
-# Penguin Anatomy Over Time and Islands: a demo of Quarto, `gt`, and `gtExtras`
+. . .
 
 Quarto®
 : Quarto is an open-source scientific and technical publishing system built on Pandoc.  
 
+. . .
+
 gt
-: With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
+: With the gt package, anyone can make wonderful-looking tables using the R programming language, and a cohesive set of table parts, such as the table header, stub, column labels and spanner column labels, table body, and the table footer.
+
+. . .
 
 gtExtras
 : The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  
-
----
 
 ## Load packages and prep data
 
@@ -63,6 +66,9 @@ dat <- penguins %>%
 
 ## Build the table with gt, include some gtExtras functions for colors
 
+:::: {.columns}
+
+::: {.column width="40%"}
 gt's default is to produce an html table.
 
 ```{r}
@@ -118,9 +124,27 @@ pt <- dat %>%
   tab_options(
     row_group.font.weight = "800"
   )
+```
 
+:::
+
+::: {.column width="60%"}
+HTML Output
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| 
 pt
 ```
+:::
+
+::::
+
+
+
+
 
 # Your turn! To get started:
 see [quarto.org](https://quarto.org/)  
