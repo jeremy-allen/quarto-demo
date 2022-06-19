@@ -1,5 +1,5 @@
 ---
-title: "Quarto and gt tables to revealJS slides"
+title: "Quarto and gt tables to reveal.js slides"
 author: "Jeremy Allen"
 date: "`r as.Date(Sys.time())`"
 format:
