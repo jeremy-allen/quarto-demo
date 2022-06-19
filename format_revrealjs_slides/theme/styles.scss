@@ -26,6 +26,14 @@ $presentation-heading-color: #383d3d !default;
   color: #AF3C1F;
 }
 
+.reveal div.sourceCode {
+  background-color: #f0f1eb
+}
+
+.reveal .code-wrapper {
+  height: 100%;
+}
+
 .reveal a {
   color: #1E1E1E;
   line-height: 1em;
@@ -36,6 +44,7 @@ $presentation-heading-color: #383d3d !default;
   font-weight: 600;
 }
 
-.column.cell {
+.reveal .column.cell {
   padding: 3px;
 }
+

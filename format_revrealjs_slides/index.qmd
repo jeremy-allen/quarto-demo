@@ -4,6 +4,7 @@ author: "Jeremy Allen"
 date: "`r as.Date(Sys.time())`"
 format:
   revealjs:
+    scrollable: true
     theme: ["theme/styles.scss"]
     slide-number: c/t
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
@@ -66,29 +67,181 @@ dat <- penguins %>%
 
 ## Build the table with gt, include some gtExtras functions for colors
 
-:::: {.columns}
-
-::: {.column width="40%"}
-gt's default is to produce an html table.
+`gt`'s default is to produce an html table  
+Let's first group our data by penguin species
 
 ```{r}
 #| echo: true
 #| message: false
 #| warning: false
+#| output-location: column
+#| code-line-numbers: "|3"
 
 # table using gt package
-pt <- dat %>% 
+dat %>% 
   dplyr::group_by(species) %>% # add a grouping variable and drop stub info
-  #gt(rowname_col = "species") %>%
-  #tab_stubhead(label = "species") %>%
+  gt()
+
+```
+
+## Headers and spanners
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| output-location: column
+#| code-line-numbers: "|5-8|9-12"
+
+# table using gt package
+dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
   gt() %>% 
   tab_header(
-    title = md("**Penguin Anatomical Changes**"),
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
     subtitle = "By species, island, and year from 2007-2009"
   ) %>%
   tab_spanner( # tab spanner!
-    label = "mean anatomy measures in mm",
-    columns = c(bill_length_mm:flipper_length_mm)
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
+  )
+```
+
+## Formatting numbers
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| output-location: column
+#| code-line-numbers: "|13-16"
+
+# table using gt package
+dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
+  ) %>% 
+  fmt_number(
+    columns = bill_length_mm:body_mass_g,
+    decimals = 1
+  )
+```
+
+## Sources, footnotes, and references
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| output-location: column
+#| code-line-numbers: "|17-19|20-26|27-30"
+
+# table using gt package
+dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
+  ) %>% 
+  fmt_number(
+    columns = bill_length_mm:body_mass_g,
+    decimals = 1
+  ) %>% 
+  tab_source_note(
+    source_note = "Source: Very cold nights."
+  ) %>%
+  tab_source_note(
+    # hitting return to start new lines so the string will stay inside the PDF
+    # but it will be a continuous string when it renders as the footnote
+    source_note = md("Reference: Horst AM, Hill AP, Gorman KB (2020). 
+    palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package
+    version 0.1.0. https://allisonhorst.github.io/palmerpenguins/")
+  ) %>% 
+  tab_footnote(
+    footnote = "Only found on a single island.",
+    locations = cells_row_groups(groups = c("Chinstrap", "Gentoo"))
+  )
+```
+
+## `gtExtras` for heatmap-like colors
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| output-location: column
+#| code-line-numbers: "|31-35"
+
+# table using gt package
+dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
+  ) %>% 
+  fmt_number(
+    columns = bill_length_mm:body_mass_g,
+    decimals = 1
+  ) %>% 
+  tab_source_note(
+    source_note = "Source: Very cold nights."
+  ) %>%
+  tab_source_note(
+    # hitting return to start new lines so the string will stay inside the PDF
+    # but it will be a continuous string when it renders as the footnote
+    source_note = md("Reference: Horst AM, Hill AP, Gorman KB (2020). 
+    palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package
+    version 0.1.0. https://allisonhorst.github.io/palmerpenguins/")
+  ) %>% 
+  tab_footnote(
+    footnote = "Only found on a single island.",
+    locations = cells_row_groups(groups = c("Chinstrap", "Gentoo"))
+  ) %>%
+  # trim gives smaller range of colors
+  # so the green and purples are not as dark
+  gt_hulk_col_numeric(bill_length_mm, trim = TRUE) %>%  # gtExtras!
+  gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
+  gt_hulk_col_numeric(flipper_length_mm, trim = TRUE)  # gtExtras!
+  
+```
+
+## Change column labels and row-group lables
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| output-location: column
+#| code-line-numbers: "|36-43|44-46"
+
+# table using gt package
+dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
   ) %>% 
   fmt_number(
     columns = bill_length_mm:body_mass_g,
@@ -114,10 +267,10 @@ pt <- dat %>%
   gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
   gt_hulk_col_numeric(flipper_length_mm, trim = TRUE) %>%  # gtExtras!
   cols_label( # new column labels!
-    bill_length_mm = md("**Bill Length**"), # wrapped in md() for markdown
-    bill_depth_mm = md("**Bill Depth**"),
-    flipper_length_mm = md("**Flipper Length**"),
-    body_mass_g = "Body Mass, g",
+    bill_length_mm = html("Bill Length<br>mm"),
+    bill_depth_mm = html("Bill Depth<br>mm"),
+    flipper_length_mm = html("Flipper Length<br>mm"),
+    body_mass_g = html("Body Mass<br>g"),
     island = "Island",
     year = "Year"
   ) %>% 
@@ -125,26 +278,6 @@ pt <- dat %>%
     row_group.font.weight = "800"
   )
 ```
-
-:::
-
-::: {.column width="60%"}
-HTML Output
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| 
-pt
-```
-:::
-
-::::
-
-
-
-
 
 # Your turn! To get started:
 see [quarto.org](https://quarto.org/)  
