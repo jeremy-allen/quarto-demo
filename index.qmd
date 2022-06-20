@@ -24,7 +24,11 @@ editor_options:
 ---
 
 :::{.title-center}
-Quarto as reveal.js slides
+Quarto as reveal.js Slides
+:::
+
+:::{.center}
+here is R once again being useful
 :::
 
 :::{.half-image}
