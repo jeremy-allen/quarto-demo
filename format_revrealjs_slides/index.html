@@ -9,9 +9,8 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-0.9.594">
-<meta name="author" content="Jeremy Allen">
-<meta name="dcterms.date" content="2022-06-19">
-<title>Quarto and gt tables to reveal.js slides</title>
+<meta name="dcterms.date" content="2022-06-20">
+<title>index</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,11 +384,20 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide"><h1 class="title">Quarto and gt tables to reveal.js slides</h1>
-  <p class="author">Jeremy Allen</p>
-  <p class="date">2022-06-19</p>
-</section><section><section id="penguin-anatomy-over-time-and-islands-a-demo-of-quarto-gt-and-gtextras" class="title-slide slide level1"><h1>Penguin Anatomy Over Time and Islands: a demo of <code>Quarto</code>, <code>gt</code>, and <code>gtExtras</code>
+
+<section class="slide level2"><div class="title-center">
+<p>Quarto as reveal.js slides</p>
+</div>
+<div class="half-image">
+<p><img data-src="www/icons.png" alt="icons for Quarto, gt, and gtExtras"></p>
+</div>
+<div class="author">
+<p>Jeremy Allen<br> Customer Success, RStudio<br> twitter: <span class="citation" data-cites="jeremy_data">@jeremy_data</span></p>
+</div>
+</section><section><section id="a-demo-of-quarto-gt-and-gtextras" class="title-slide slide level1"><h1>A demo of <code>Quarto</code>, <code>gt</code>, and <code>gtExtras</code>
 </h1>
+<p>using <code>palmerpenguins</code> data</p>
+<p><br><br></p>
 <div class="fragment">
 <dl>
 <dt>Quarto®</dt>
@@ -414,7 +422,8 @@ The goal of gtExtras is to provide some additional helper functions to assist in
 </dd>
 </dl>
 </div>
-</section><section id="load-packages-and-prep-data" class="slide level2"><h2>Load packages and prep data</h2>
+</section><section id="lets-build-a-gt-table" class="slide level2"><h2>Let’s build a <code>gt</code> table</h2>
+<p>before we talk about making slides with Quarto</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(palmerpenguins)</span>
@@ -444,12 +453,12 @@ Let’s first group our data by penguin species</p>
 </div><div class="column">
 <div class="cell-output-display">
 
-<div id="ohhxkfchii" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="toetaieeip" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ohhxkfchii .gt_table {
+#toetaieeip .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -474,7 +483,7 @@ Let’s first group our data by penguin species</p>
   border-left-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_heading {
+#toetaieeip .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -486,7 +495,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_title {
+#toetaieeip .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -498,7 +507,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-width: 0;
 }
 
-#ohhxkfchii .gt_subtitle {
+#toetaieeip .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -510,13 +519,13 @@ Let’s first group our data by penguin species</p>
   border-top-width: 0;
 }
 
-#ohhxkfchii .gt_bottom_border {
+#toetaieeip .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_col_headings {
+#toetaieeip .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -531,7 +540,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_col_heading {
+#toetaieeip .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -551,7 +560,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#ohhxkfchii .gt_column_spanner_outer {
+#toetaieeip .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -563,15 +572,15 @@ Let’s first group our data by penguin species</p>
   padding-right: 4px;
 }
 
-#ohhxkfchii .gt_column_spanner_outer:first-child {
+#toetaieeip .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ohhxkfchii .gt_column_spanner_outer:last-child {
+#toetaieeip .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ohhxkfchii .gt_column_spanner {
+#toetaieeip .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -583,7 +592,7 @@ Let’s first group our data by penguin species</p>
   width: 100%;
 }
 
-#ohhxkfchii .gt_group_heading {
+#toetaieeip .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -608,7 +617,7 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#ohhxkfchii .gt_empty_group_heading {
+#toetaieeip .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -623,15 +632,15 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#ohhxkfchii .gt_from_md > :first-child {
+#toetaieeip .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ohhxkfchii .gt_from_md > :last-child {
+#toetaieeip .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ohhxkfchii .gt_row {
+#toetaieeip .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -650,7 +659,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#ohhxkfchii .gt_stub {
+#toetaieeip .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -663,7 +672,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ohhxkfchii .gt_stub_row_group {
+#toetaieeip .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -677,11 +686,11 @@ Let’s first group our data by penguin species</p>
   vertical-align: top;
 }
 
-#ohhxkfchii .gt_row_group_first td {
+#toetaieeip .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ohhxkfchii .gt_summary_row {
+#toetaieeip .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -691,16 +700,16 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ohhxkfchii .gt_first_summary_row {
+#toetaieeip .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_first_summary_row.thick {
+#toetaieeip .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ohhxkfchii .gt_last_summary_row {
+#toetaieeip .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -710,7 +719,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_grand_summary_row {
+#toetaieeip .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -720,7 +729,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ohhxkfchii .gt_first_grand_summary_row {
+#toetaieeip .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -730,11 +739,11 @@ Let’s first group our data by penguin species</p>
   border-top-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_striped {
+#toetaieeip .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ohhxkfchii .gt_table_body {
+#toetaieeip .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -743,7 +752,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_footnotes {
+#toetaieeip .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -757,7 +766,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_footnote {
+#toetaieeip .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -766,7 +775,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ohhxkfchii .gt_sourcenotes {
+#toetaieeip .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -780,7 +789,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ohhxkfchii .gt_sourcenote {
+#toetaieeip .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -788,36 +797,36 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ohhxkfchii .gt_left {
+#toetaieeip .gt_left {
   text-align: left;
 }
 
-#ohhxkfchii .gt_center {
+#toetaieeip .gt_center {
   text-align: center;
 }
 
-#ohhxkfchii .gt_right {
+#toetaieeip .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ohhxkfchii .gt_font_normal {
+#toetaieeip .gt_font_normal {
   font-weight: normal;
 }
 
-#ohhxkfchii .gt_font_bold {
+#toetaieeip .gt_font_bold {
   font-weight: bold;
 }
 
-#ohhxkfchii .gt_font_italic {
+#toetaieeip .gt_font_italic {
   font-style: italic;
 }
 
-#ohhxkfchii .gt_super {
+#toetaieeip .gt_super {
   font-size: 65%;
 }
 
-#ohhxkfchii .gt_two_val_uncert {
+#toetaieeip .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -826,31 +835,31 @@ Let’s first group our data by penguin species</p>
   margin-left: 0.1em;
 }
 
-#ohhxkfchii .gt_footnote_marks {
+#toetaieeip .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ohhxkfchii .gt_asterisk {
+#toetaieeip .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ohhxkfchii .gt_slash_mark {
+#toetaieeip .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#ohhxkfchii .gt_fraction_numerator {
+#toetaieeip .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#ohhxkfchii .gt_fraction_denominator {
+#toetaieeip .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1019,12 +1028,12 @@ Let’s first group our data by penguin species</p>
 </div><div class="column">
 <div class="cell-output-display">
 
-<div id="jxqhattbkn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tbweczdjaq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jxqhattbkn .gt_table {
+#tbweczdjaq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1049,7 +1058,7 @@ Let’s first group our data by penguin species</p>
   border-left-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_heading {
+#tbweczdjaq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1061,7 +1070,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_title {
+#tbweczdjaq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1073,7 +1082,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-width: 0;
 }
 
-#jxqhattbkn .gt_subtitle {
+#tbweczdjaq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1085,13 +1094,13 @@ Let’s first group our data by penguin species</p>
   border-top-width: 0;
 }
 
-#jxqhattbkn .gt_bottom_border {
+#tbweczdjaq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_col_headings {
+#tbweczdjaq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1106,7 +1115,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_col_heading {
+#tbweczdjaq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1126,7 +1135,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#jxqhattbkn .gt_column_spanner_outer {
+#tbweczdjaq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1138,15 +1147,15 @@ Let’s first group our data by penguin species</p>
   padding-right: 4px;
 }
 
-#jxqhattbkn .gt_column_spanner_outer:first-child {
+#tbweczdjaq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jxqhattbkn .gt_column_spanner_outer:last-child {
+#tbweczdjaq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jxqhattbkn .gt_column_spanner {
+#tbweczdjaq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1158,7 +1167,7 @@ Let’s first group our data by penguin species</p>
   width: 100%;
 }
 
-#jxqhattbkn .gt_group_heading {
+#tbweczdjaq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1183,7 +1192,7 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#jxqhattbkn .gt_empty_group_heading {
+#tbweczdjaq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1198,15 +1207,15 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#jxqhattbkn .gt_from_md > :first-child {
+#tbweczdjaq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jxqhattbkn .gt_from_md > :last-child {
+#tbweczdjaq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jxqhattbkn .gt_row {
+#tbweczdjaq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1225,7 +1234,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#jxqhattbkn .gt_stub {
+#tbweczdjaq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1238,7 +1247,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#jxqhattbkn .gt_stub_row_group {
+#tbweczdjaq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1252,11 +1261,11 @@ Let’s first group our data by penguin species</p>
   vertical-align: top;
 }
 
-#jxqhattbkn .gt_row_group_first td {
+#tbweczdjaq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jxqhattbkn .gt_summary_row {
+#tbweczdjaq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1266,16 +1275,16 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#jxqhattbkn .gt_first_summary_row {
+#tbweczdjaq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_first_summary_row.thick {
+#tbweczdjaq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jxqhattbkn .gt_last_summary_row {
+#tbweczdjaq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1285,7 +1294,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_grand_summary_row {
+#tbweczdjaq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1295,7 +1304,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#jxqhattbkn .gt_first_grand_summary_row {
+#tbweczdjaq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1305,11 +1314,11 @@ Let’s first group our data by penguin species</p>
   border-top-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_striped {
+#tbweczdjaq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jxqhattbkn .gt_table_body {
+#tbweczdjaq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1318,7 +1327,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_footnotes {
+#tbweczdjaq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1332,7 +1341,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_footnote {
+#tbweczdjaq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1341,7 +1350,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#jxqhattbkn .gt_sourcenotes {
+#tbweczdjaq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1355,7 +1364,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#jxqhattbkn .gt_sourcenote {
+#tbweczdjaq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1363,36 +1372,36 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#jxqhattbkn .gt_left {
+#tbweczdjaq .gt_left {
   text-align: left;
 }
 
-#jxqhattbkn .gt_center {
+#tbweczdjaq .gt_center {
   text-align: center;
 }
 
-#jxqhattbkn .gt_right {
+#tbweczdjaq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jxqhattbkn .gt_font_normal {
+#tbweczdjaq .gt_font_normal {
   font-weight: normal;
 }
 
-#jxqhattbkn .gt_font_bold {
+#tbweczdjaq .gt_font_bold {
   font-weight: bold;
 }
 
-#jxqhattbkn .gt_font_italic {
+#tbweczdjaq .gt_font_italic {
   font-style: italic;
 }
 
-#jxqhattbkn .gt_super {
+#tbweczdjaq .gt_super {
   font-size: 65%;
 }
 
-#jxqhattbkn .gt_two_val_uncert {
+#tbweczdjaq .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1401,31 +1410,31 @@ Let’s first group our data by penguin species</p>
   margin-left: 0.1em;
 }
 
-#jxqhattbkn .gt_footnote_marks {
+#tbweczdjaq .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#jxqhattbkn .gt_asterisk {
+#tbweczdjaq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jxqhattbkn .gt_slash_mark {
+#tbweczdjaq .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#jxqhattbkn .gt_fraction_numerator {
+#tbweczdjaq .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#jxqhattbkn .gt_fraction_denominator {
+#tbweczdjaq .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1613,12 +1622,12 @@ Let’s first group our data by penguin species</p>
 </div><div class="column">
 <div class="cell-output-display">
 
-<div id="daymlaspyw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qkakwqkwbt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#daymlaspyw .gt_table {
+#qkakwqkwbt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1643,7 +1652,7 @@ Let’s first group our data by penguin species</p>
   border-left-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_heading {
+#qkakwqkwbt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1655,7 +1664,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_title {
+#qkakwqkwbt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1667,7 +1676,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-width: 0;
 }
 
-#daymlaspyw .gt_subtitle {
+#qkakwqkwbt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1679,13 +1688,13 @@ Let’s first group our data by penguin species</p>
   border-top-width: 0;
 }
 
-#daymlaspyw .gt_bottom_border {
+#qkakwqkwbt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_col_headings {
+#qkakwqkwbt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1700,7 +1709,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_col_heading {
+#qkakwqkwbt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1720,7 +1729,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#daymlaspyw .gt_column_spanner_outer {
+#qkakwqkwbt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1732,15 +1741,15 @@ Let’s first group our data by penguin species</p>
   padding-right: 4px;
 }
 
-#daymlaspyw .gt_column_spanner_outer:first-child {
+#qkakwqkwbt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#daymlaspyw .gt_column_spanner_outer:last-child {
+#qkakwqkwbt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#daymlaspyw .gt_column_spanner {
+#qkakwqkwbt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1752,7 +1761,7 @@ Let’s first group our data by penguin species</p>
   width: 100%;
 }
 
-#daymlaspyw .gt_group_heading {
+#qkakwqkwbt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1777,7 +1786,7 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#daymlaspyw .gt_empty_group_heading {
+#qkakwqkwbt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1792,15 +1801,15 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#daymlaspyw .gt_from_md > :first-child {
+#qkakwqkwbt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#daymlaspyw .gt_from_md > :last-child {
+#qkakwqkwbt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#daymlaspyw .gt_row {
+#qkakwqkwbt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1819,7 +1828,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#daymlaspyw .gt_stub {
+#qkakwqkwbt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1832,7 +1841,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#daymlaspyw .gt_stub_row_group {
+#qkakwqkwbt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1846,11 +1855,11 @@ Let’s first group our data by penguin species</p>
   vertical-align: top;
 }
 
-#daymlaspyw .gt_row_group_first td {
+#qkakwqkwbt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#daymlaspyw .gt_summary_row {
+#qkakwqkwbt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1860,16 +1869,16 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#daymlaspyw .gt_first_summary_row {
+#qkakwqkwbt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_first_summary_row.thick {
+#qkakwqkwbt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#daymlaspyw .gt_last_summary_row {
+#qkakwqkwbt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1879,7 +1888,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_grand_summary_row {
+#qkakwqkwbt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1889,7 +1898,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#daymlaspyw .gt_first_grand_summary_row {
+#qkakwqkwbt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1899,11 +1908,11 @@ Let’s first group our data by penguin species</p>
   border-top-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_striped {
+#qkakwqkwbt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#daymlaspyw .gt_table_body {
+#qkakwqkwbt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1912,7 +1921,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_footnotes {
+#qkakwqkwbt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1926,7 +1935,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_footnote {
+#qkakwqkwbt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1935,7 +1944,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#daymlaspyw .gt_sourcenotes {
+#qkakwqkwbt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1949,7 +1958,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#daymlaspyw .gt_sourcenote {
+#qkakwqkwbt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1957,36 +1966,36 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#daymlaspyw .gt_left {
+#qkakwqkwbt .gt_left {
   text-align: left;
 }
 
-#daymlaspyw .gt_center {
+#qkakwqkwbt .gt_center {
   text-align: center;
 }
 
-#daymlaspyw .gt_right {
+#qkakwqkwbt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#daymlaspyw .gt_font_normal {
+#qkakwqkwbt .gt_font_normal {
   font-weight: normal;
 }
 
-#daymlaspyw .gt_font_bold {
+#qkakwqkwbt .gt_font_bold {
   font-weight: bold;
 }
 
-#daymlaspyw .gt_font_italic {
+#qkakwqkwbt .gt_font_italic {
   font-style: italic;
 }
 
-#daymlaspyw .gt_super {
+#qkakwqkwbt .gt_super {
   font-size: 65%;
 }
 
-#daymlaspyw .gt_two_val_uncert {
+#qkakwqkwbt .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1995,31 +2004,31 @@ Let’s first group our data by penguin species</p>
   margin-left: 0.1em;
 }
 
-#daymlaspyw .gt_footnote_marks {
+#qkakwqkwbt .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#daymlaspyw .gt_asterisk {
+#qkakwqkwbt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#daymlaspyw .gt_slash_mark {
+#qkakwqkwbt .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#daymlaspyw .gt_fraction_numerator {
+#qkakwqkwbt .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#daymlaspyw .gt_fraction_denominator {
+#qkakwqkwbt .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -2221,12 +2230,12 @@ Let’s first group our data by penguin species</p>
 </div><div class="column">
 <div class="cell-output-display">
 
-<div id="ypfdwnbliu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zeohijdibd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ypfdwnbliu .gt_table {
+#zeohijdibd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2251,7 +2260,7 @@ Let’s first group our data by penguin species</p>
   border-left-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_heading {
+#zeohijdibd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2263,7 +2272,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_title {
+#zeohijdibd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2275,7 +2284,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-width: 0;
 }
 
-#ypfdwnbliu .gt_subtitle {
+#zeohijdibd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2287,13 +2296,13 @@ Let’s first group our data by penguin species</p>
   border-top-width: 0;
 }
 
-#ypfdwnbliu .gt_bottom_border {
+#zeohijdibd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_col_headings {
+#zeohijdibd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2308,7 +2317,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_col_heading {
+#zeohijdibd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2328,7 +2337,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#ypfdwnbliu .gt_column_spanner_outer {
+#zeohijdibd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2340,15 +2349,15 @@ Let’s first group our data by penguin species</p>
   padding-right: 4px;
 }
 
-#ypfdwnbliu .gt_column_spanner_outer:first-child {
+#zeohijdibd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ypfdwnbliu .gt_column_spanner_outer:last-child {
+#zeohijdibd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ypfdwnbliu .gt_column_spanner {
+#zeohijdibd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2360,7 +2369,7 @@ Let’s first group our data by penguin species</p>
   width: 100%;
 }
 
-#ypfdwnbliu .gt_group_heading {
+#zeohijdibd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2385,7 +2394,7 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#ypfdwnbliu .gt_empty_group_heading {
+#zeohijdibd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2400,15 +2409,15 @@ Let’s first group our data by penguin species</p>
   vertical-align: middle;
 }
 
-#ypfdwnbliu .gt_from_md > :first-child {
+#zeohijdibd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ypfdwnbliu .gt_from_md > :last-child {
+#zeohijdibd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ypfdwnbliu .gt_row {
+#zeohijdibd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2427,7 +2436,7 @@ Let’s first group our data by penguin species</p>
   overflow-x: hidden;
 }
 
-#ypfdwnbliu .gt_stub {
+#zeohijdibd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2440,7 +2449,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ypfdwnbliu .gt_stub_row_group {
+#zeohijdibd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2454,11 +2463,11 @@ Let’s first group our data by penguin species</p>
   vertical-align: top;
 }
 
-#ypfdwnbliu .gt_row_group_first td {
+#zeohijdibd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ypfdwnbliu .gt_summary_row {
+#zeohijdibd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2468,16 +2477,16 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ypfdwnbliu .gt_first_summary_row {
+#zeohijdibd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_first_summary_row.thick {
+#zeohijdibd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ypfdwnbliu .gt_last_summary_row {
+#zeohijdibd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2487,7 +2496,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_grand_summary_row {
+#zeohijdibd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2497,7 +2506,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ypfdwnbliu .gt_first_grand_summary_row {
+#zeohijdibd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2507,11 +2516,11 @@ Let’s first group our data by penguin species</p>
   border-top-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_striped {
+#zeohijdibd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ypfdwnbliu .gt_table_body {
+#zeohijdibd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2520,7 +2529,7 @@ Let’s first group our data by penguin species</p>
   border-bottom-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_footnotes {
+#zeohijdibd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2534,7 +2543,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_footnote {
+#zeohijdibd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2543,7 +2552,7 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ypfdwnbliu .gt_sourcenotes {
+#zeohijdibd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2557,7 +2566,7 @@ Let’s first group our data by penguin species</p>
   border-right-color: #D3D3D3;
 }
 
-#ypfdwnbliu .gt_sourcenote {
+#zeohijdibd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2565,36 +2574,36 @@ Let’s first group our data by penguin species</p>
   padding-right: 5px;
 }
 
-#ypfdwnbliu .gt_left {
+#zeohijdibd .gt_left {
   text-align: left;
 }
 
-#ypfdwnbliu .gt_center {
+#zeohijdibd .gt_center {
   text-align: center;
 }
 
-#ypfdwnbliu .gt_right {
+#zeohijdibd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ypfdwnbliu .gt_font_normal {
+#zeohijdibd .gt_font_normal {
   font-weight: normal;
 }
 
-#ypfdwnbliu .gt_font_bold {
+#zeohijdibd .gt_font_bold {
   font-weight: bold;
 }
 
-#ypfdwnbliu .gt_font_italic {
+#zeohijdibd .gt_font_italic {
   font-style: italic;
 }
 
-#ypfdwnbliu .gt_super {
+#zeohijdibd .gt_super {
   font-size: 65%;
 }
 
-#ypfdwnbliu .gt_two_val_uncert {
+#zeohijdibd .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2603,31 +2612,31 @@ Let’s first group our data by penguin species</p>
   margin-left: 0.1em;
 }
 
-#ypfdwnbliu .gt_footnote_marks {
+#zeohijdibd .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ypfdwnbliu .gt_asterisk {
+#zeohijdibd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ypfdwnbliu .gt_slash_mark {
+#zeohijdibd .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#ypfdwnbliu .gt_fraction_numerator {
+#zeohijdibd .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#ypfdwnbliu .gt_fraction_denominator {
+#zeohijdibd .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -2851,12 +2860,12 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
 </div><div class="column">
 <div class="cell-output-display">
 
-<div id="nafbaztdcy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="znnydeprjx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#nafbaztdcy .gt_table {
+#znnydeprjx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2881,7 +2890,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-left-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_heading {
+#znnydeprjx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2893,7 +2902,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_title {
+#znnydeprjx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2905,7 +2914,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-bottom-width: 0;
 }
 
-#nafbaztdcy .gt_subtitle {
+#znnydeprjx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2917,13 +2926,13 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-top-width: 0;
 }
 
-#nafbaztdcy .gt_bottom_border {
+#znnydeprjx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_col_headings {
+#znnydeprjx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2938,7 +2947,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_col_heading {
+#znnydeprjx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2958,7 +2967,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   overflow-x: hidden;
 }
 
-#nafbaztdcy .gt_column_spanner_outer {
+#znnydeprjx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2970,15 +2979,15 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 4px;
 }
 
-#nafbaztdcy .gt_column_spanner_outer:first-child {
+#znnydeprjx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nafbaztdcy .gt_column_spanner_outer:last-child {
+#znnydeprjx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nafbaztdcy .gt_column_spanner {
+#znnydeprjx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2990,7 +2999,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   width: 100%;
 }
 
-#nafbaztdcy .gt_group_heading {
+#znnydeprjx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3015,7 +3024,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   vertical-align: middle;
 }
 
-#nafbaztdcy .gt_empty_group_heading {
+#znnydeprjx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3030,15 +3039,15 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   vertical-align: middle;
 }
 
-#nafbaztdcy .gt_from_md > :first-child {
+#znnydeprjx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nafbaztdcy .gt_from_md > :last-child {
+#znnydeprjx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nafbaztdcy .gt_row {
+#znnydeprjx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3057,7 +3066,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   overflow-x: hidden;
 }
 
-#nafbaztdcy .gt_stub {
+#znnydeprjx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3070,7 +3079,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#nafbaztdcy .gt_stub_row_group {
+#znnydeprjx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3084,11 +3093,11 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   vertical-align: top;
 }
 
-#nafbaztdcy .gt_row_group_first td {
+#znnydeprjx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nafbaztdcy .gt_summary_row {
+#znnydeprjx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3098,16 +3107,16 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#nafbaztdcy .gt_first_summary_row {
+#znnydeprjx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_first_summary_row.thick {
+#znnydeprjx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nafbaztdcy .gt_last_summary_row {
+#znnydeprjx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3117,7 +3126,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-bottom-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_grand_summary_row {
+#znnydeprjx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3127,7 +3136,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#nafbaztdcy .gt_first_grand_summary_row {
+#znnydeprjx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3137,11 +3146,11 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-top-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_striped {
+#znnydeprjx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nafbaztdcy .gt_table_body {
+#znnydeprjx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3150,7 +3159,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-bottom-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_footnotes {
+#znnydeprjx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3164,7 +3173,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_footnote {
+#znnydeprjx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3173,7 +3182,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#nafbaztdcy .gt_sourcenotes {
+#znnydeprjx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3187,7 +3196,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#nafbaztdcy .gt_sourcenote {
+#znnydeprjx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3195,36 +3204,36 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#nafbaztdcy .gt_left {
+#znnydeprjx .gt_left {
   text-align: left;
 }
 
-#nafbaztdcy .gt_center {
+#znnydeprjx .gt_center {
   text-align: center;
 }
 
-#nafbaztdcy .gt_right {
+#znnydeprjx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nafbaztdcy .gt_font_normal {
+#znnydeprjx .gt_font_normal {
   font-weight: normal;
 }
 
-#nafbaztdcy .gt_font_bold {
+#znnydeprjx .gt_font_bold {
   font-weight: bold;
 }
 
-#nafbaztdcy .gt_font_italic {
+#znnydeprjx .gt_font_italic {
   font-style: italic;
 }
 
-#nafbaztdcy .gt_super {
+#znnydeprjx .gt_super {
   font-size: 65%;
 }
 
-#nafbaztdcy .gt_two_val_uncert {
+#znnydeprjx .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -3233,31 +3242,31 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   margin-left: 0.1em;
 }
 
-#nafbaztdcy .gt_footnote_marks {
+#znnydeprjx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#nafbaztdcy .gt_asterisk {
+#znnydeprjx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nafbaztdcy .gt_slash_mark {
+#znnydeprjx .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#nafbaztdcy .gt_fraction_numerator {
+#znnydeprjx .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#nafbaztdcy .gt_fraction_denominator {
+#znnydeprjx .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -3491,12 +3500,12 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
 </div><div class="column">
 <div class="cell-output-display">
 
-<div id="dlykxqoknm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ylrcfqtvjm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dlykxqoknm .gt_table {
+#ylrcfqtvjm .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3521,7 +3530,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-left-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_heading {
+#ylrcfqtvjm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3533,7 +3542,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_title {
+#ylrcfqtvjm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3545,7 +3554,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-bottom-width: 0;
 }
 
-#dlykxqoknm .gt_subtitle {
+#ylrcfqtvjm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3557,13 +3566,13 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-top-width: 0;
 }
 
-#dlykxqoknm .gt_bottom_border {
+#ylrcfqtvjm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_col_headings {
+#ylrcfqtvjm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3578,7 +3587,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_col_heading {
+#ylrcfqtvjm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3598,7 +3607,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   overflow-x: hidden;
 }
 
-#dlykxqoknm .gt_column_spanner_outer {
+#ylrcfqtvjm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3610,15 +3619,15 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 4px;
 }
 
-#dlykxqoknm .gt_column_spanner_outer:first-child {
+#ylrcfqtvjm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dlykxqoknm .gt_column_spanner_outer:last-child {
+#ylrcfqtvjm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dlykxqoknm .gt_column_spanner {
+#ylrcfqtvjm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3630,7 +3639,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   width: 100%;
 }
 
-#dlykxqoknm .gt_group_heading {
+#ylrcfqtvjm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3655,7 +3664,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   vertical-align: middle;
 }
 
-#dlykxqoknm .gt_empty_group_heading {
+#ylrcfqtvjm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3670,15 +3679,15 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   vertical-align: middle;
 }
 
-#dlykxqoknm .gt_from_md > :first-child {
+#ylrcfqtvjm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dlykxqoknm .gt_from_md > :last-child {
+#ylrcfqtvjm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dlykxqoknm .gt_row {
+#ylrcfqtvjm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3697,7 +3706,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   overflow-x: hidden;
 }
 
-#dlykxqoknm .gt_stub {
+#ylrcfqtvjm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3710,7 +3719,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#dlykxqoknm .gt_stub_row_group {
+#ylrcfqtvjm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3724,11 +3733,11 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   vertical-align: top;
 }
 
-#dlykxqoknm .gt_row_group_first td {
+#ylrcfqtvjm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dlykxqoknm .gt_summary_row {
+#ylrcfqtvjm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3738,16 +3747,16 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#dlykxqoknm .gt_first_summary_row {
+#ylrcfqtvjm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_first_summary_row.thick {
+#ylrcfqtvjm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dlykxqoknm .gt_last_summary_row {
+#ylrcfqtvjm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3757,7 +3766,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-bottom-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_grand_summary_row {
+#ylrcfqtvjm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3767,7 +3776,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#dlykxqoknm .gt_first_grand_summary_row {
+#ylrcfqtvjm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3777,11 +3786,11 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-top-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_striped {
+#ylrcfqtvjm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dlykxqoknm .gt_table_body {
+#ylrcfqtvjm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3790,7 +3799,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-bottom-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_footnotes {
+#ylrcfqtvjm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3804,7 +3813,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_footnote {
+#ylrcfqtvjm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3813,7 +3822,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#dlykxqoknm .gt_sourcenotes {
+#ylrcfqtvjm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3827,7 +3836,7 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   border-right-color: #D3D3D3;
 }
 
-#dlykxqoknm .gt_sourcenote {
+#ylrcfqtvjm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3835,36 +3844,36 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   padding-right: 5px;
 }
 
-#dlykxqoknm .gt_left {
+#ylrcfqtvjm .gt_left {
   text-align: left;
 }
 
-#dlykxqoknm .gt_center {
+#ylrcfqtvjm .gt_center {
   text-align: center;
 }
 
-#dlykxqoknm .gt_right {
+#ylrcfqtvjm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dlykxqoknm .gt_font_normal {
+#ylrcfqtvjm .gt_font_normal {
   font-weight: normal;
 }
 
-#dlykxqoknm .gt_font_bold {
+#ylrcfqtvjm .gt_font_bold {
   font-weight: bold;
 }
 
-#dlykxqoknm .gt_font_italic {
+#ylrcfqtvjm .gt_font_italic {
   font-style: italic;
 }
 
-#dlykxqoknm .gt_super {
+#ylrcfqtvjm .gt_super {
   font-size: 65%;
 }
 
-#dlykxqoknm .gt_two_val_uncert {
+#ylrcfqtvjm .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -3873,31 +3882,31 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
   margin-left: 0.1em;
 }
 
-#dlykxqoknm .gt_footnote_marks {
+#ylrcfqtvjm .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#dlykxqoknm .gt_asterisk {
+#ylrcfqtvjm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dlykxqoknm .gt_slash_mark {
+#ylrcfqtvjm .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#dlykxqoknm .gt_fraction_numerator {
+#ylrcfqtvjm .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#dlykxqoknm .gt_fraction_denominator {
+#ylrcfqtvjm .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -4079,10 +4088,164 @@ version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</td>
 </div>
 </div>
 </div>
+</section><section id="now-heres-a-little-about-quarto" class="slide level2"><h2>Now here’s a little about quarto</h2>
+<p>The YAML for this presentation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="pp">---</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"`r as.Date(Sys.time())`"</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">serif</span><span class="kw">,</span><span class="at"> theme/styles.scss</span><span class="kw">]</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> c/t</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="at">    </span><span class="fu">footer</span><span class="kw">:</span><span class="at"> </span><span class="st">"[https://github.com/jeremy-allen/quarto-demo](https://github.com/jeremy-allen/quarto-demo)"</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="at">    </span><span class="fu">code-copy</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="at">    </span><span class="fu">center-title-slide</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> heading-meta.html</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="at">    </span><span class="fu">code-link</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="at">    </span><span class="fu">code-overflow</span><span class="kw">:</span><span class="at"> wrap</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="at">    </span><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> a11y</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="at">    </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">1080</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="at">    </span><span class="fu">width</span><span class="kw">:</span><span class="at"> </span><span class="dv">1920</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="at">    </span><span class="fu">link-external-newwindow</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="fu">execute</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="at">  </span><span class="fu">eval</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="fu">editor_options</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="at">  </span><span class="fu">chunk_output_type</span><span class="kw">:</span><span class="at"> console</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<p>I excluded title and author because I wanted to make my own title slide</p>
+</section><section id="my-title-slide-code" class="slide level2"><h2>My title slide code</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>I use markdown that creates html divs and specifies their css classes</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2"></a>:::{.title-center}</span>
+<span id="cb9-3"><a href="#cb9-3"></a>Quarto as reveal.js slides</span>
+<span id="cb9-4"><a href="#cb9-4"></a>:::</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a>:::{.half-image}</span>
+<span id="cb9-7"><a href="#cb9-7"></a>![](www/icons.png){fig-alt="icons for Quarto, gt, and gtExtras"}</span>
+<span id="cb9-8"><a href="#cb9-8"></a>:::</span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a>:::{.author}</span>
+<span id="cb9-11"><a href="#cb9-11"></a>Jeremy Allen&lt;br&gt;</span>
+<span id="cb9-12"><a href="#cb9-12"></a>Customer Success, RStudio&lt;br&gt;</span>
+<span id="cb9-13"><a href="#cb9-13"></a>twitter: @jeremy_data</span>
+<span id="cb9-14"><a href="#cb9-14"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:40%;">
+<p>In my css file I have these classes defined</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2"></a>.title-center {</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  font-size: 2.75em;</span>
+<span id="cb10-4"><a href="#cb10-4"></a>  text-align: center;</span>
+<span id="cb10-5"><a href="#cb10-5"></a>  margin: auto;</span>
+<span id="cb10-6"><a href="#cb10-6"></a>}</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a>.half-image {</span>
+<span id="cb10-9"><a href="#cb10-9"></a>  width: 50%;</span>
+<span id="cb10-10"><a href="#cb10-10"></a>  margin: auto;</span>
+<span id="cb10-11"><a href="#cb10-11"></a>}</span>
+<span id="cb10-12"><a href="#cb10-12"></a></span>
+<span id="cb10-13"><a href="#cb10-13"></a>.author {</span>
+<span id="cb10-14"><a href="#cb10-14"></a>  font-size: 1.25em;</span>
+<span id="cb10-15"><a href="#cb10-15"></a>  font-weight: 400;</span>
+<span id="cb10-16"><a href="#cb10-16"></a>  text-align: left;</span>
+<span id="cb10-17"><a href="#cb10-17"></a>  position: absolute;</span>
+<span id="cb10-18"><a href="#cb10-18"></a>  left: 30px;</span>
+<span id="cb10-19"><a href="#cb10-19"></a>  bottom: 30px;</span>
+<span id="cb10-20"><a href="#cb10-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><br><br> But how did I make this <a href="https://quarto.org/docs/presentations/index.html#multiple-columns">two-column slide?</a></p>
+</div>
+</section><section id="how-slide-2-was-made-with-animated-text-and-definitions" class="slide level2"><h2>How slide 2 was made with animated text and definitions</h2>
+<p>To make text appear on-click, not all at once, separate text with three dots, space between each dot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2"></a># A demo of `Quarto`, `gt`, and `gtExtras`</span>
+<span id="cb11-3"><a href="#cb11-3"></a>using `palmerpenguins` data  </span>
+<span id="cb11-4"><a href="#cb11-4"></a>  </span>
+<span id="cb11-5"><a href="#cb11-5"></a>&lt;br&gt;</span>
+<span id="cb11-6"><a href="#cb11-6"></a>&lt;br&gt;</span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a>. . .</span>
+<span id="cb11-9"><a href="#cb11-9"></a></span>
+<span id="cb11-10"><a href="#cb11-10"></a>Quarto®</span>
+<span id="cb11-11"><a href="#cb11-11"></a>: Quarto is an open-source scientific and technical publishing system built on Pandoc.  </span>
+<span id="cb11-12"><a href="#cb11-12"></a></span>
+<span id="cb11-13"><a href="#cb11-13"></a>. . .</span>
+<span id="cb11-14"><a href="#cb11-14"></a></span>
+<span id="cb11-15"><a href="#cb11-15"></a>gt</span>
+<span id="cb11-16"><a href="#cb11-16"></a>: With the gt package, anyone can make wonderful-looking tables using the R programming language, and a cohesive set of table parts, such as the table header, stub, column labels and spanner column labels, table body, and the table footer.</span>
+<span id="cb11-17"><a href="#cb11-17"></a></span>
+<span id="cb11-18"><a href="#cb11-18"></a>. . .</span>
+<span id="cb11-19"><a href="#cb11-19"></a></span>
+<span id="cb11-20"><a href="#cb11-20"></a>gtExtras</span>
+<span id="cb11-21"><a href="#cb11-21"></a>: The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The markdown convention below, shows the word in bold and offsets the definition below (not unique to slides)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2"></a>word</span>
+<span id="cb12-3"><a href="#cb12-3"></a>: definition goes here  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="how-code-and-ouput-slides-were-made" class="slide level2"><h2>How code and ouput slides were made</h2>
+<p>Inside an r code chunck, the usual knitr chunk options are used first<br><code>output-location: column</code> is used to split code and output into columns<br><code>code-line-numbers: "|17-19|20-26|27-30"</code> steps through code highlights on click</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2"></a>#| echo: true</span>
+<span id="cb13-3"><a href="#cb13-3"></a>#| message: false</span>
+<span id="cb13-4"><a href="#cb13-4"></a>#| warning: false</span>
+<span id="cb13-5"><a href="#cb13-5"></a>#| output-location: column</span>
+<span id="cb13-6"><a href="#cb13-6"></a>#| code-line-numbers: "|17-19|20-26|27-30"</span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a># table using gt package</span>
+<span id="cb13-9"><a href="#cb13-9"></a>dat %&gt;% </span>
+<span id="cb13-10"><a href="#cb13-10"></a>  dplyr::group_by(species) %&gt;% # add a grouping variable and drop stub info</span>
+<span id="cb13-11"><a href="#cb13-11"></a>  gt() %&gt;% </span>
+<span id="cb13-12"><a href="#cb13-12"></a>  tab_header(</span>
+<span id="cb13-13"><a href="#cb13-13"></a>    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown</span>
+<span id="cb13-14"><a href="#cb13-14"></a>    subtitle = "By species, island, and year from 2007-2009"</span>
+<span id="cb13-15"><a href="#cb13-15"></a>  ) %&gt;%</span>
+<span id="cb13-16"><a href="#cb13-16"></a>  tab_spanner( # tab spanner!</span>
+<span id="cb13-17"><a href="#cb13-17"></a>    label = "mean anatomical measures",</span>
+<span id="cb13-18"><a href="#cb13-18"></a>    columns = c(bill_length_mm:body_mass_g)</span>
+<span id="cb13-19"><a href="#cb13-19"></a>  ) %&gt;% </span>
+<span id="cb13-20"><a href="#cb13-20"></a>  fmt_number(</span>
+<span id="cb13-21"><a href="#cb13-21"></a>    columns = bill_length_mm:body_mass_g,</span>
+<span id="cb13-22"><a href="#cb13-22"></a>    decimals = 1</span>
+<span id="cb13-23"><a href="#cb13-23"></a>  ) %&gt;% </span>
+<span id="cb13-24"><a href="#cb13-24"></a>  tab_source_note(</span>
+<span id="cb13-25"><a href="#cb13-25"></a>    source_note = "Source: Very cold nights."</span>
+<span id="cb13-26"><a href="#cb13-26"></a>  ) %&gt;%</span>
+<span id="cb13-27"><a href="#cb13-27"></a>  tab_source_note(</span>
+<span id="cb13-28"><a href="#cb13-28"></a>    # hitting return to start new lines so the string will stay inside the PDF</span>
+<span id="cb13-29"><a href="#cb13-29"></a>    # but it will be a continuous string when it renders as the footnote</span>
+<span id="cb13-30"><a href="#cb13-30"></a>    source_note = md("Reference: Horst AM, Hill AP, Gorman KB (2020). </span>
+<span id="cb13-31"><a href="#cb13-31"></a>    palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package</span>
+<span id="cb13-32"><a href="#cb13-32"></a>    version 0.1.0. https://allisonhorst.github.io/palmerpenguins/")</span>
+<span id="cb13-33"><a href="#cb13-33"></a>  ) %&gt;% </span>
+<span id="cb13-34"><a href="#cb13-34"></a>  tab_footnote(</span>
+<span id="cb13-35"><a href="#cb13-35"></a>    footnote = "Only found on a single island.",</span>
+<span id="cb13-36"><a href="#cb13-36"></a>    locations = cells_row_groups(groups = c("Chinstrap", "Gentoo"))</span>
+<span id="cb13-37"><a href="#cb13-37"></a>  )</span>
+<span id="cb13-38"><a href="#cb13-38"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section><section id="your-turn-to-get-started" class="title-slide slide level1"><h1>Your turn! To get started:</h1>
 <p>see <a href="https://quarto.org/">quarto.org</a><br>
 see <a href="https://gt.rstudio.com/index.html">gt</a><br>
 see <a href="https://jthomasmock.github.io/gtExtras/">gtExtras</a></p>
+<p><br> code at <a href="https://github.com/jeremy-allen/quarto-demo" class="uri">https://github.com/jeremy-allen/quarto-demo</a></p>
+<div class="author">
+<p>Jeremy Allen<br> Customer Success, RStudio<br> twitter: <span class="citation" data-cites="jeremy_data">@jeremy_data</span></p>
+</div>
 
 <img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://github.com/jeremy-allen/quarto-demo">https://github.com/jeremy-allen/quarto-demo</a></p>
@@ -4397,6 +4560,20 @@ see <a href="https://jthomasmock.github.io/gtExtras/">gtExtras</a></p>
           return popup.innerHTML;
         });
       }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
     });
     </script>
 

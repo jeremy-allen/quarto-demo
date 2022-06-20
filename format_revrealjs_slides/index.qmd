@@ -1,11 +1,9 @@
 ---
-title: "Quarto and gt tables to reveal.js slides"
-author: "Jeremy Allen"
 date: "`r as.Date(Sys.time())`"
 format:
   revealjs:
     scrollable: true
-    theme: ["theme/styles.scss"]
+    theme: [serif, theme/styles.scss]
     slide-number: c/t
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[https://github.com/jeremy-allen/quarto-demo](https://github.com/jeremy-allen/quarto-demo)"
@@ -17,6 +15,7 @@ format:
     highlight-style: a11y
     height: 1080
     width: 1920
+    link-external-newwindow: true
 execute: 
   eval: true
   echo: true
@@ -24,7 +23,26 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Penguin Anatomy Over Time and Islands: a demo of `Quarto`, `gt`, and `gtExtras`
+:::{.title-center}
+Quarto as reveal.js slides
+:::
+
+:::{.half-image}
+![](www/icons.png){fig-alt="icons for Quarto, gt, and gtExtras"}
+:::
+
+:::{.author}
+Jeremy Allen<br>
+Customer Success, RStudio<br>
+twitter: @jeremy_data
+:::
+
+
+# A demo of `Quarto`, `gt`, and `gtExtras`
+using `palmerpenguins` data  
+  
+<br>
+<br>
 
 . . .
 
@@ -41,7 +59,8 @@ gt
 gtExtras
 : The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  
 
-## Load packages and prep data
+## Let's build a `gt` table
+before we talk about making slides with Quarto
 
 ```{r}
 #| message: false
@@ -279,8 +298,196 @@ dat %>%
   )
 ```
 
+## Now here's a little about quarto
+
+The YAML for this presentation
+
+```{YAML}
+---
+date: "`r as.Date(Sys.time())`"
+format:
+  revealjs:
+    scrollable: true
+    theme: [serif, theme/styles.scss]
+    slide-number: c/t
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[https://github.com/jeremy-allen/quarto-demo](https://github.com/jeremy-allen/quarto-demo)"
+    code-copy: true
+    center-title-slide: false
+    include-in-header: heading-meta.html
+    code-link: true
+    code-overflow: wrap
+    highlight-style: a11y
+    height: 1080
+    width: 1920
+    link-external-newwindow: true
+execute: 
+  eval: true
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+```
+
+<br>
+
+I excluded title and author because I wanted to make my own title slide
+
+## My title slide code
+
+:::: {.columns}
+
+::: {.column width="60%"}
+I use markdown that creates html divs and specifies their css classes
+
+```{text}
+
+:::{.title-center}
+Quarto as reveal.js slides
+:::
+
+:::{.half-image}
+![](www/icons.png){fig-alt="icons for Quarto, gt, and gtExtras"}
+:::
+
+:::{.author}
+Jeremy Allen<br>
+Customer Success, RStudio<br>
+twitter: @jeremy_data
+:::
+
+```
+:::
+
+::: {.column width="40%"}
+In my css file I have these classes defined
+
+```{text}
+
+.title-center {
+  font-size: 2.75em;
+  text-align: center;
+  margin: auto;
+}
+
+.half-image {
+  width: 50%;
+  margin: auto;
+}
+
+.author {
+  font-size: 1.25em;
+  font-weight: 400;
+  text-align: left;
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+```
+:::
+<br>
+<br>
+But how did I make this [two-column slide?](https://quarto.org/docs/presentations/index.html#multiple-columns)
+::::
+
+
+
+## How slide 2 was made with animated text and definitions
+To make text appear on-click, not all at once, separate text with three dots, space between each dot
+
+```{text}
+
+# A demo of `Quarto`, `gt`, and `gtExtras`
+using `palmerpenguins` data  
+  
+<br>
+<br>
+
+. . .
+
+Quarto®
+: Quarto is an open-source scientific and technical publishing system built on Pandoc.  
+
+. . .
+
+gt
+: With the gt package, anyone can make wonderful-looking tables using the R programming language, and a cohesive set of table parts, such as the table header, stub, column labels and spanner column labels, table body, and the table footer.
+
+. . .
+
+gtExtras
+: The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  
+
+```
+
+The markdown convention below, shows the word in bold and offsets the definition below
+(not unique to slides)
+
+```{text}
+
+word
+: definition goes here  
+
+```
+
+## How code and ouput slides were made
+
+| Inside an r code chunck, the usual knitr chunk options are used first
+| `output-location: column` is used to split code and output into columns
+| `code-line-numbers: "|17-19|20-26|27-30"` steps through code highlights on click
+
+```{text}
+
+#| echo: true
+#| message: false
+#| warning: false
+#| output-location: column
+#| code-line-numbers: "|17-19|20-26|27-30"
+
+# table using gt package
+dat %>% 
+  dplyr::group_by(species) %>% # add a grouping variable and drop stub info
+  gt() %>% 
+  tab_header(
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
+    subtitle = "By species, island, and year from 2007-2009"
+  ) %>%
+  tab_spanner( # tab spanner!
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
+  ) %>% 
+  fmt_number(
+    columns = bill_length_mm:body_mass_g,
+    decimals = 1
+  ) %>% 
+  tab_source_note(
+    source_note = "Source: Very cold nights."
+  ) %>%
+  tab_source_note(
+    # hitting return to start new lines so the string will stay inside the PDF
+    # but it will be a continuous string when it renders as the footnote
+    source_note = md("Reference: Horst AM, Hill AP, Gorman KB (2020). 
+    palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package
+    version 0.1.0. https://allisonhorst.github.io/palmerpenguins/")
+  ) %>% 
+  tab_footnote(
+    footnote = "Only found on a single island.",
+    locations = cells_row_groups(groups = c("Chinstrap", "Gentoo"))
+  )
+  
+```
+
 # Your turn! To get started:
 see [quarto.org](https://quarto.org/)  
 see [gt](https://gt.rstudio.com/index.html)  
 see [gtExtras](https://jthomasmock.github.io/gtExtras/) 
 
+<br>
+code at <https://github.com/jeremy-allen/quarto-demo>
+
+:::{.author}
+Jeremy Allen<br>
+Customer Success, RStudio<br>
+twitter: @jeremy_data
+:::

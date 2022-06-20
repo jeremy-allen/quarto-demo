@@ -22,16 +22,36 @@ $presentation-heading-color: #383d3d !default;
   color: #5A5A5A;
 }
 
+.title-center {
+  font-size: 2.75em;
+  text-align: center;
+  margin: auto;
+}
+
+.half-image {
+  width: 50%;
+  margin: auto;
+}
+
+.author {
+  font-size: 1.25em;
+  font-weight: 400;
+  text-align: left;
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
 .reveal code {
   color: #AF3C1F;
 }
 
 .reveal div.sourceCode {
-  background-color: #f0f1eb
+  background-color: #f0f1eb;
 }
 
 .reveal .code-wrapper {
   height: 100%;
+  max-height: 100%;
 }
 
 .reveal a {
@@ -47,4 +67,3 @@ $presentation-heading-color: #383d3d !default;
 .reveal .column.cell {
   padding: 3px;
 }
-
