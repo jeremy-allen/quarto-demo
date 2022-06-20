@@ -105,6 +105,7 @@ pt <- dat %>%
     year = "Year"
   ) %>% 
   tab_options(
+    heading.align = "left",
     row_group.font.weight = "800"
   )
 
@@ -143,6 +144,8 @@ knitr::include_graphics("pt_as_image.png")
 ```
 
 # Your turn! To get started:
-see [quarto.org](https://quarto.org/)  
-see [gt](https://gt.rstudio.com/index.html)  
-see [gtExtras](https://jthomasmock.github.io/gtExtras/) 
+
+- [quarto.org](https://quarto.org/)
+- [gt](https://gt.rstudio.com/index.html)
+- [gtExtras](https://jthomasmock.github.io/gtExtras/)
+- [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
