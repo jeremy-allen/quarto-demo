@@ -2,5 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
 
 /.quarto/
+/format_html/.DS_Store
+/format_pdf/.DS_Store
+/format_revealjs_lides/.DS_Store
