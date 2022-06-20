@@ -67,16 +67,14 @@ gt's default is to produce an html table.
 # table using gt package
 pt <- dat %>% 
   dplyr::group_by(species) %>% # add a grouping variable and drop stub info
-  #gt(rowname_col = "species") %>%
-  #tab_stubhead(label = "species") %>%
   gt() %>% 
   tab_header(
-    title = md("**Penguin Anatomical Changes**"),
+    title = md("**Penguin Anatomical Changes**"), #wrapped in md() for markdown
     subtitle = "By species, island, and year from 2007-2009"
   ) %>%
   tab_spanner( # tab spanner!
-    label = "mean anatomy measures in mm",
-    columns = c(bill_length_mm:flipper_length_mm)
+    label = "mean anatomical measures",
+    columns = c(bill_length_mm:body_mass_g)
   ) %>% 
   fmt_number(
     columns = bill_length_mm:body_mass_g,
@@ -102,14 +100,15 @@ pt <- dat %>%
   gt_hulk_col_numeric(bill_depth_mm, trim = TRUE) %>%  # gtExtras!
   gt_hulk_col_numeric(flipper_length_mm, trim = TRUE) %>%  # gtExtras!
   cols_label( # new column labels!
-    bill_length_mm = md("**Bill Length**"), # wrapped in md() for markdown
-    bill_depth_mm = md("**Bill Depth**"),
-    flipper_length_mm = md("**Flipper Length**"),
-    body_mass_g = "Body Mass, g",
+    bill_length_mm = html("Bill Length<br>mm"),
+    bill_depth_mm = html("Bill Depth<br>mm"),
+    flipper_length_mm = html("Flipper Length<br>mm"),
+    body_mass_g = html("Body Mass<br>g"),
     island = "Island",
     year = "Year"
   ) %>% 
   tab_options(
+    heading.align = "left",
     row_group.font.weight = "800"
   )
 
@@ -117,7 +116,9 @@ pt
 ```
 
 # Your turn! To get started:
-see [quarto.org](https://quarto.org/)  
-see [gt](https://gt.rstudio.com/index.html)  
-see [gtExtras](https://jthomasmock.github.io/gtExtras/) 
+
+- [quarto.org](https://quarto.org/)  
+- [gt](https://gt.rstudio.com/index.html)  
+- [gtExtras](https://jthomasmock.github.io/gtExtras/) 
+- [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 
