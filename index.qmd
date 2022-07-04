@@ -495,7 +495,7 @@ word
 
 ## How code and ouput slides were made
 
-| Inside an r code chunck, the usual knitr chunk options are used first
+| Inside an r code chunk, the usual knitr chunk options are used first
 | `output-location: column` is used to split code and output into columns
 | `code-line-numbers: "|17-19|20-26|27-30"` steps through code highlights on click
 
