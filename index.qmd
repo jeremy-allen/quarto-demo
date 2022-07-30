@@ -2,6 +2,7 @@
 date: "`r as.Date(Sys.time())`"
 format:
   revealjs:
+    chalkboard: true
     scrollable: true
     theme: [serif, theme/styles.scss]
     slide-number: c/t
@@ -23,6 +24,8 @@ editor_options:
   chunk_output_type: console
 ---
 
+# {transition="slide" transition-speed="slow"}
+
 :::{.title-center}
 Quarto as reveal.js Slides
 :::
@@ -42,7 +45,7 @@ twitter: @jeremy_data
 :::
 
 
-# A demo of `Quarto`, `gt`, and `gtExtras`
+# A demo of `Quarto`, `gt`, and `gtExtras` {transition="slide" transition-speed="slow"}
 using `palmerpenguins` data  
   
 <br>
@@ -63,8 +66,8 @@ gt
 gtExtras
 : The goal of gtExtras is to provide some additional helper functions to assist in creating beautiful tables with gt.  
 
-## Let's build a `gt` table
-before we talk about making slides with Quarto
+## Before we talk about Quarto {transition="slide" transition-speed="slow"}
+let's build a `gt` table and experience some Quarto features
 
 ```{r}
 #| message: false
@@ -364,11 +367,12 @@ dat %>%
 
 The YAML for this presentation
 
-```{YAML}
+```{verbatim, lang="yaml"}
 ---
 date: "`r as.Date(Sys.time())`"
 format:
   revealjs:
+    chalkboard: true
     scrollable: true
     theme: [serif, theme/styles.scss]
     slide-number: c/t
@@ -402,7 +406,7 @@ I excluded title and author because I wanted to make my own title slide
 ::: {.column width="60%"}
 markdown that creates html divs and specifies css classes
 
-```{text}
+```{verbatim, lang="markdown"}
 
 :::{.title-center}
 Quarto as reveal.js slides
@@ -424,7 +428,7 @@ twitter: @jeremy_data
 ::: {.column width="40%"}
 In my css file I have these classes defined
 
-```{text}
+```{verbatim, lang="css"}
 
 .title-center {
   font-size: 2.75em;
@@ -451,6 +455,8 @@ In my css file I have these classes defined
 <br>
 <br>
 But how did I make this [two-column slide?](https://quarto.org/docs/presentations/index.html#multiple-columns)
+<br>
+And [different syntax highlighting](https://bookdown.org/yihui/rmarkdown-cookbook/verbatim-code-chunks.html#verbatim-code-chunks) on the left and right?
 ::::
 
 
@@ -458,7 +464,7 @@ But how did I make this [two-column slide?](https://quarto.org/docs/presentation
 ## How slide 2 was made with animated text and definitions
 To make text appear on-click, not all at once, separate text with three dots, space between each dot
 
-```{text}
+```{verbatim, lang="markdown"}
 
 # A demo of `Quarto`, `gt`, and `gtExtras`
 using `palmerpenguins` data  
@@ -486,7 +492,7 @@ gtExtras
 The markdown convention below, shows the word in bold and offsets the definition below
 (not unique to slides)
 
-```{text}
+```{verbatim, lang="markdown"}
 
 word
 : definition goes here  
@@ -499,7 +505,7 @@ word
 | `output-location: column` is used to split code and output into columns
 | `code-line-numbers: "|17-19|20-26|27-30"` steps through code highlights on click
 
-```{text}
+```{verbatim, lang="r"}
 
 #| echo: true
 #| message: false
@@ -540,7 +546,7 @@ dat %>%
   
 ```
 
-# Your turn! To get started:
+# Your turn! To get started {background-image="www/paper.png" background-size="cover"}
 
 - [quarto.org](https://quarto.org/)  
 - [gt](https://gt.rstudio.com/index.html)  
@@ -551,8 +557,13 @@ dat %>%
 <br>
 code at <https://github.com/jeremy-allen/quarto-demo>
 
+:::{.credit}
+Photo by <a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly Sikkema</a> on <a href="https://unsplash.com/s/photos/paper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
+
 :::{.author}
 Jeremy Allen<br>
 Customer Success, RStudio<br>
 twitter: @jeremy_data
 :::
+  
