@@ -363,7 +363,7 @@ dat %>%
   )
 ```
 
-## Now here's a little about quarto
+## Now here's a little about quarto {transition="slide" transition-speed="slow"}
 
 The YAML for this presentation
 
@@ -399,7 +399,7 @@ editor_options:
 
 I excluded title and author because I wanted to make my own title slide
 
-## My title slide code
+## My title slide code {transition="slide" transition-speed="slow"}
 
 :::: {.columns}
 
@@ -461,7 +461,7 @@ And [different syntax highlighting](https://bookdown.org/yihui/rmarkdown-cookboo
 
 
 
-## How slide 2 was made with animated text and definitions
+## How slide 2 was made with animated text and definitions {transition="slide" transition-speed="slow"}
 To make text appear on-click, not all at once, separate text with three dots, space between each dot
 
 ```{verbatim, lang="markdown"}
@@ -499,13 +499,13 @@ word
 
 ```
 
-## How code and ouput slides were made
+## How code and ouput slides were made {transition="slide" transition-speed="slow"}
 
 | Inside an r code chunk, the usual knitr chunk options are used first
 | `output-location: column` is used to split code and output into columns
 | `code-line-numbers: "|17-19|20-26|27-30"` steps through code highlights on click
 
-```{verbatim, lang="r"}
+```{verbatim, lang="r"} 
 
 #| echo: true
 #| message: false
